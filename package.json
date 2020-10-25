@@ -1,0 +1,16 @@
+{
+  "name": "the-coding-train-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "serve src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^3.1.0",
+    "serve": "^11.3.2"
+  }
+}
