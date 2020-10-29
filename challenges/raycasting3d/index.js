@@ -281,6 +281,21 @@ function draw() {
 
     let n = player.rays.length;
     let s = width / n;
+
+    let m = 100;
+    let l = (height / m) / 2;
+    for(let i = 0; i < m; i++) {
+        let a = map(i, 0, m, 0, 255);
+        noStroke();
+        fill(255, 0, 0, a);
+        rect(0, height/2 + i * l, width, l); 
+    }
+    for(let i = 0; i < m; i++) {
+        let a = map(i, 0, m, 255, 0);
+        noStroke();
+        fill(0, 0, 255, a);
+        rect(0, i * l, width, l); 
+    }
     
     for(let i = 0; i < n; i++) {
         let ray = player.rays[i];
