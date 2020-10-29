@@ -149,19 +149,23 @@ class Player {
         this.angle = a
         this.map2d = map2d;
         this.velocity = this.map2d.blockSize / 20;
+        this.raysCount = 180;
+        this.updateXY();
+    }
+
+    createRays() {
         this.rays = [];
-        let q = 180;
+        let c = this.raysCount;
         let r = Math.PI/3;
-        if (q == 1) this.rays.push(new Ray(this, 0));
+        if (c == 1) this.rays.push(new Ray(this, 0));
         else {
-            q = q % 2 ? q : q + 1;
+            c = c % 2 ? c : c + 1;
             var t = (r);
-            let s = t / (q-1);
-            for(let i = 0; i < q; i++) {
+            let s = t / (c-1);
+            for(let i = 0; i < c; i++) {
                 this.rays.push(new Ray(this, (s * i) - (r/2)));
             }
         }
-        this.updateXY();
     }
 
     updateXY() {
@@ -170,6 +174,7 @@ class Player {
     }
 
     calc() {
+        this.createRays();
         this.rays.forEach(_ => _.calc());
     }
 
@@ -227,28 +232,43 @@ class Player {
 }
 
 const path = `
-#####################
-# 1                 #
-#        #          #
-#        #          #
-##########          #
-#             #     #
-#                   #
-#    ##     #########
-#    ##     #       #
-#           #       #
-#           #       #
-#                   #
-#####################
+###############################################################
+#          #                #            #                    #
+#1                          #                                 #
+#          #     #####      #            #      #######       #
+############     #####      #            #      #             #
+#          #     #####      ##############      #             #
+#          #                                    #             #
+#          #                ##############                    #
+#          ##################            ######### ############
+#                                                             #
+#                                                             #
+#  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  # #                                                       #
+#                                                             #
+# #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
+#                                                             #
+#  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  # #                                                       #
+#                                                             #
+# #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
+#                                                             #
+#  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  # #                                                       #
+#                                                             #
+# #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
+#                                                             #
+###############################################################
 `;
 
 let map2d;
 //setup();
 
+let slider;
+
 function setup() {
     createCanvas(800, 600);
     map2d = new Map2d(path);
-
+    slider = createSlider(1, 360, 180, 10);
+    slider.position(10, height - 20);
+    slider.style('width', '80px');
 }
 
 function draw() {
@@ -273,11 +293,12 @@ function draw() {
         map2d.players[0].rotateRight();
     }
 
+    let player = map2d.players[0];
     
-
+    player.raysCount = slider.value();
     map2d.calc();
     
-    let player = map2d.players[0];
+    
 
     let n = player.rays.length;
     let s = width / n;
