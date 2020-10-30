@@ -14,7 +14,14 @@ class Block {
             this.spriteX = 8;
             this.spriteY = 8;
             this.spriteVerticalX = 48;
-            this.spriteVerticalY = 48;
+            this.spriteVerticalY = 8;
+        } else if (this.v == "@") {
+            this.spriteWidth = 32;
+            this.spriteHeight = 32;
+            this.spriteX = 88;
+            this.spriteY = 8;
+            this.spriteVerticalX = 128;
+            this.spriteVerticalY = 8;
         }
     }
 
