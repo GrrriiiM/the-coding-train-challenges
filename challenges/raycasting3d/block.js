@@ -7,10 +7,24 @@ class Block {
         this.posMax = createVector(x * map2d.blockSize + map2d.blockSize, y * map2d.blockSize + map2d.blockSize);
         this.map2d = map2d;
         this.sprites = sprites;
-        this.spriteWidth = 32;
-        this.spriteHeight = 32;
-        this.spriteX = 8;
-        this.spriteY = 8;
+
+        if (this.v == "#") {
+            this.spriteWidth = 32;
+            this.spriteHeight = 32;
+            this.spriteX = 8;
+            this.spriteY = 8;
+            this.spriteVerticalX = 48;
+            this.spriteVerticalY = 48;
+        }
+    }
+
+    getSpritePosition(vertical) {
+        return {
+            w: this.spriteWidth,
+            h: this.spriteHeight,
+            x: vertical ? this.spriteVerticalX : this.spriteX,
+            y: vertical ? this.spriteVerticalY : this.spriteY
+        }
     }
 
     

@@ -104,7 +104,8 @@ class Ray {
         // let c = area.color(255, 255, 255, a); 
         // area.brightness(c);
         area.noSmooth();
-        area.image(this.block.sprites.wall, x, y, w, h, 8 + Math.floor(sw * (32/this.player.map2d.blockSize)), 8, 1, 32);
+        let spritePostion = this.block.getSpritePosition(this.vertical);
+        area.image(this.block.sprites.wall, x, y, w, h, spritePostion.x + Math.floor(sw * (32/this.player.map2d.blockSize)), spritePostion.y, 1, spritePostion.h);
         //area.pop();
         
         
