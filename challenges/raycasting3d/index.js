@@ -1,28 +1,17 @@
 const path = `
-###############################################################
-#          #                #            #                    #
-#1                          #                                 #
-#          #     ##@##      #            #      #######       #
-############     @###@      #            #      #             #
-#          #     ##@##      ##############      #             #
-#          #                                    #             #
-#          #                ##############                    #
-#          ##################            ######### ############
-#                                                             #
-#                                                             #
-#  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  # #                                                       #
-#                                                             #
-# #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-#                                                             #
-#  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  # #                                                       #
-#                                                             #
-# #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-#                                                             #
-#  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  # #                                                       #
-#                                                             #
-# #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
-#                                                             #
-###############################################################
+IIJIIIIJIIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKKKKKKKKKKKKKKKKKKKKK
+I         IA                A            A                    K
+I1                          A                                 K
+I         IA     ACDCA      A            A      EEEEEEE       K
+IIIJIIIIJIIA     BAAAB      A            A      E             K
+A          A     ACDCA      A            A      E             K
+A    DG    A                AAAAAAAAAAAAAA      E             K
+A    HL    A                                                  K
+A          AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKKKKKKKKKK KKKKKKKKKK
+M                                                             M
+M   A   B   C   E   F   J   K   L   M   N   O   P   Q   R  S  M
+M                                                             M
+ABCEFJKLMNOPQRSTABCEFJKLMNOPQRSTABCEFJKLMNOPQRSTABCEFJKLMNOPQRS  
 `;
 
 let map2d;
